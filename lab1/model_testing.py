@@ -12,7 +12,7 @@ from logging import getLogger, StreamHandler, INFO
 DATA_PATH = 'test'
 
 # Путь к файлу модели
-MODEL_PATH = 'model/model.pkl'
+MODEL_PATH = 'model.pkl'
 
 # Логирование метрик
 logger = getLogger(__name__)

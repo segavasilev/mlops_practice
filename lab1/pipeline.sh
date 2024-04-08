@@ -1,12 +1,24 @@
-# Скрипт последовательно запускает все py-файлы из папки lab1
-# В консоль выводится результат выполнения каждого скрипта и его код завершения
+#!/bin/bash
 
-# Список скриптов в порядке их выполнения
-# shellcheck disable=SC2054
-scripts=(lab1/data_creation.py, lab1/model_preprocessing.py, lab1/model_preparation.py, lab1/model_testing.py)
+# Установим pip3
+apt update
+apt install python3-pip -y
+apt install python3.10-venv -y
+
+# Создадим окружение
+python3 -m venv .venv
+
+# Активируем окружение
+source .venv/bin/activate
+
+# Устанавливем библиотеки
+pip install -r requirements.txt
 
 # Запуск всех скриптов
-# shellcheck disable=SC2068
-for script in ${scripts[@]}; do
-    python3 "$script"
-done
+python3 data_creation.py
+python3 data_preprocessing.py
+python3 model_preparation.py
+python3 model_testing.py
+
+# Деактивируем окружение
+deactivate

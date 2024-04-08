@@ -1,7 +1,7 @@
 """
 Скрипт создает и обучает модель машинного обучения на построенных данных из папки “train”.
 При обучении модели используется библиотека CatBoostRegressor.
-В качестве данных используется предобработанный набор из папки “train” с расширением npz.
+В качестве данных используется предобработанный набор из папки “train” с расширением npy.
 Результат обучения модели сохраняется в файл “model.pkl”.
 """
 
@@ -17,7 +17,7 @@ from logging import getLogger, StreamHandler, INFO
 DATA_PATH = 'train'
 
 # Путь к файлу модели
-MODEL_PATH = 'model/model.pkl'
+MODEL_PATH = 'model.pkl'
 
 # Логирование метрик
 logger = getLogger(__name__)
@@ -39,7 +39,7 @@ y = train_data[:, -1]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Обучение базовой модели
-model = CatBoostRegressor(iterations=1000, learning_rate=0.1, depth=10, verbose=100)
+model = CatBoostRegressor(iterations=1000, learning_rate=0.1, depth=10, verbose=0)
 model.fit(X_train, y_train)
 
 # Оценка качества модели
@@ -48,7 +48,7 @@ mse = mean_squared_error(y_test, y_pred)
 logger.info(f'Mean Squared Error: {mse}')
 
 # Быстрый файн-тюнинг модели с поиском лучших параметров
-model = CatBoostRegressor(iterations=1000, learning_rate=0.1, depth=10, verbose=100)
+model = CatBoostRegressor(iterations=1000, learning_rate=0.1, depth=10, verbose=0)
 model.fit(X_train, y_train, eval_set=(X_test, y_test), early_stopping_rounds=50)
 logger.info(f'Best iteration: {model.get_best_iteration()}')
 
