@@ -54,6 +54,10 @@ if __name__ == '__main__':
     train = create_features(train, args.target_variable)
     test = create_features(test, args.target_variable)
 
+    # Drop rows with missing values
+    train = train.dropna()
+    test = test.dropna()
+
     # Save prepared data
     train.to_csv(os.path.join(args.train_data_path, args.prepared_train_file_name), index=False)
     test.to_csv(os.path.join(args.test_data_path, args.prepared_test_file_name), index=False)
