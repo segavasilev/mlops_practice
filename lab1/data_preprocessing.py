@@ -29,9 +29,9 @@ def create_features(data: pd.DataFrame, target: str, lags: int = 1) -> pd.DataFr
 if __name__ == '__main__':
     # Parse arguments
     parser = argparse.ArgumentParser(description='Data preprocessing')
-    parser.add_argument('--test_data_path', type=str, default="test/", help='Path to save test data')
+    parser.add_argument('--test_data_path', type=str, default="test/", help='Path to saved test data')
     parser.add_argument('--origin_test_file_name', type=str, default="test.csv", help='Name of the original test file')
-    parser.add_argument('--train_data_path', type=str, default="train/", help='Path to save train data')
+    parser.add_argument('--train_data_path', type=str, default="train/", help='Path to saved train data')
     parser.add_argument('--origin_train_file_name', type=str, default="train.csv", help='Name of the original train '
                                                                                         'file')
     parser.add_argument('--prepared_train_file_name', type=str, default="prepared_train.csv", help='Name of the '

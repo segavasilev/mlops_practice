@@ -61,12 +61,9 @@ def save_model(model: CatBoostRegressor, model_path: str, model_file_name: str) 
 if __name__ == '__main__':
     # Parse arguments
     parser = argparse.ArgumentParser(description='Model training')
-    parser.add_argument('--test_data_path', type=str, default="test/", help='Path to save test data')
-    parser.add_argument('--train_data_path', type=str, default="train/", help='Path to save train data')
+    parser.add_argument('--train_data_path', type=str, default="train/", help='Path to saved train data')
     parser.add_argument('--prepared_train_file_name', type=str, default="prepared_train.csv", help='Name of the '
                                                                                                    'prepared train file')
-    parser.add_argument('--prepared_test_file_name', type=str, default="prepared_test.csv", help='Name of the '
-                                                                                                   'prepared test file')
     parser.add_argument('--target_variable', type=str, default='rhum', help='Name of the target variable')
     parser.add_argument('--model_path', type=str, default="model/", help='Path to save the model')
     parser.add_argument('--model_file_name', type=str, default="model.pkl", help='Name of the model file')
