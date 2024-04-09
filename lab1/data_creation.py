@@ -1,5 +1,4 @@
-"""Данный скрипт выкачивает данные реальных погодных наблюдений.
-В качестве параметров принимает:
+"""Данный скрипт выкачивает данные реальных погодных наблюдений. В качестве параметров принимает:
 - дату начала и конца периода наблюдений,
 - географические координаты места наблюдений.
 """
@@ -52,11 +51,18 @@ def split_data(data: pd.DataFrame, test_size: float = 0.3) -> Tuple[pd.DataFrame
 if __name__ == '__main__':
     # Parse arguments
     parser = argparse.ArgumentParser(description='Download weather data')
+    parser.add_argument('--test_data_path', type=str, default="test/", help='Path to save test data')
+    parser.add_argument('--origin_test_file_name', type=str, default="test.csv", help='Name of the original test file')
+    parser.add_argument('--train_data_path', type=str, default="train/", help='Path to save train data')
+    parser.add_argument('--origin_train_file_name', type=str, default="train.csv", help='Name of the original train '
+                                                                                        'file')
     parser.add_argument('--lat', type=float, required=True, help='Latitude of the location (ie. 7.8804)')
     parser.add_argument('--lon', type=float, required=True, help='Longitude of the location (ie. 98.3923')
     parser.add_argument('--alt', type=float, help='Altitude of the location (ie. 10.0)')
-    parser.add_argument('--start_date', type=str, required=True, help='Beginning of the period (ie. 2020-01-01 00:00:00)')
+    parser.add_argument('--start_date', type=str, required=True, help='Beginning of the period (ie. 2020-01-01 '
+                                                                      '00:00:00)')
     parser.add_argument('--end_date', type=str, required=True, help='End of the period (ie. 2020-12-31 23:00:00)')
+
     # Simulate command line arguments
     #argv = ['--lat', '7.8804', '--lon', '98.3923', '--alt', '10.0', '--start_date', '2020-01-01 00:00:00', '--end_date', '2020-1-31 23:00:00']
     #args = parser.parse_args(argv)
@@ -74,11 +80,10 @@ if __name__ == '__main__':
     train, test = split_data(data)
 
     # Save data
-    paths = ['train', 'test']
-    for path in paths:
+    for path in [args.train_data_path, args.test_data_path]:
         os.makedirs(path, exist_ok=True)
-    train_path = 'train/train_data.csv'
-    test_path = 'test/test_data.csv'
+    train_path = os.path.join(args.train_data_path, args.origin_train_file_name)
+    test_path = os.path.join(args.test_data_path, args.origin_test_file_name)
     train.to_csv(train_path, index=False)
     test.to_csv(test_path, index=False)
     # Stdout message with paths
