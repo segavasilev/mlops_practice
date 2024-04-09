@@ -9,8 +9,8 @@ from sklearn.metrics import mean_squared_error
 
 import argparse
 
-from lab1.model_preparation import read_data
-from lab1.model_preparation import split_data
+from model_preparation import read_data #noqa
+from model_preparation import split_data #noqa
 
 def load_model(model_path: str, model_file_name: str) -> object:
     """
@@ -51,7 +51,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Load data
-    test = read_data(os.path.join(args.test_data_path, args.origin_test_file_name))
+    test = read_data(os.path.join(args.test_data_path, args.prepared_test_file_name))
 
     # Split data
     X_test, y_test = split_data(test, args.target_variable)
