@@ -9,7 +9,7 @@ origin_test_file_name="test.csv"
 prepared_train_file_name="prepared_train.csv"
 prepared_test_file_name="prepared_test.csv"
 model_file="model.pkl"
-target_column='rhum'
+target_variable='rhum'
 
 # Установим pip3
 apt update
@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 # Запуск всех скриптов
 python3 data_creation.py --lat 7.8804 --lon 98.3923 --alt 10.0 --start_date "2020-01-01 00:00:00" --end_date "2020-1-31 23:00:00"
-python3 data_preprocessing.py --target_column $target_column
+python3 data_preprocessing.py --target_variable $target_variable
 #python3 data_preprocessing.py
 #python3 model_preparation.py
 #python3 model_testing.py

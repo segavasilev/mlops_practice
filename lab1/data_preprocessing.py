@@ -38,9 +38,11 @@ if __name__ == '__main__':
                                                                                                    'prepared train file')
     parser.add_argument('--prepared_test_file_name', type=str, default="prepared_test.csv", help='Name of the '
                                                                                                  'prepared test file')
-    parser.add_argument('--prepared_test_file_name', type=str, default="prepared_test.csv", help='Name of the '
-                                                                                                 'prepared test file')
     parser.add_argument('--target_variable', type=str, default='rhum', help='Name of the target variable')
+
+    # Simulate command line arguments
+    #argv = ['--target_variable', 'rhum']
+    #args = parser.parse_args(argv)
 
     args = parser.parse_args()
 
