@@ -86,5 +86,4 @@ if __name__ == '__main__':
     test_path = os.path.join(args.test_data_path, args.origin_test_file_name)
     train.to_csv(train_path, index=False)
     test.to_csv(test_path, index=False)
-    # Stdout message with paths
-    print(f'{train_path}, {test_path}')
+    print(f"Data saved successfully to {train_path} and {test_path}")
