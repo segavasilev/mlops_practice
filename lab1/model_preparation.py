@@ -89,4 +89,4 @@ if __name__ == '__main__':
     # Save model
     save_model(model, args.model_path, args.model_file_name)
 
-    print(f"Model is trained and saved to {os.path.join(args.model_path, args.model_file_name)}")
+    print(f"Model is trained and saved to {args.model_path}/{args.model_file_name}")
