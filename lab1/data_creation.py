@@ -58,7 +58,7 @@ if __name__ == '__main__':
                                                                                         'file')
     parser.add_argument('--lat', type=float, required=True, help='Latitude of the location (ie. 7.8804)')
     parser.add_argument('--lon', type=float, required=True, help='Longitude of the location (ie. 98.3923')
-    parser.add_argument('--alt', type=float, help='Altitude of the location (ie. 10.0)')
+    parser.add_argument('--alt', type=float, default=0.0, help='Altitude of the location (ie. 10.0)')
     parser.add_argument('--start_date', type=str, required=True, help='Beginning of the period (ie. 2020-01-01 '
                                                                       '00:00:00)')
     parser.add_argument('--end_date', type=str, required=True, help='End of the period (ie. 2020-12-31 23:00:00)')
