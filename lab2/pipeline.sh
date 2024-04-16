@@ -7,11 +7,8 @@
 # Path to the Jenkins home directory
 JENKINS_HOME="$JENKINS_HOME"
 
-# Path to the Jenkins build job
-JENKINS_JOB="$JENKINS_HOME/jobs/lab2"
-
 # Path to the Jenkins workspace
-JENKINS_WORKSPACE="$JENKINS_JOB/workspace"
+JENKINS_WORKSPACE="$JENKINS_HOME/workspace"
 
 # Path to the source code
 PROJECT_SOURCE_PATH="$JENKINS_WORKSPACE/lab2"
