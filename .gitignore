@@ -6,4 +6,4 @@ target
 **/catboost_info
 **/__pycache__
 **/.ipynb_checkpoints
-*/.png
+**/*.png
