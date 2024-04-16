@@ -1,0 +1,4 @@
+numpy
+catboost
+scikit-learn
+meteostat
