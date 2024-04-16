@@ -7,25 +7,22 @@
 # Path to the Jenkins home directory
 JENKINS_HOME="$JENKINS_HOME"
 
-echo pwd
-
 # Path to the Jenkins workspace
-#JENKINS_WORKSPACE="$JENKINS_HOME/workspace"
+JENKINS_WORKSPACE="$JENKINS_HOME/workspace"
 
 # Path to the source code
-#PROJECT_SOURCE_PATH="$JENKINS_WORKSPACE/lab2"
-
+PROJECT_SOURCE_PATH="$JENKINS_WORKSPACE/lab2"
 
 # Create  virtual environment
-#python3 -m venv PROJECT_SOURCE_PATH/venv
+python3 -m venv PROJECT_SOURCE_PATH/venv
 
 # Activate the virtual environment
-#source PROJECT_SOURCE_PATH/venv/bin/activate
+source PROJECT_SOURCE_PATH/venv/bin/activate
 
 # Install the required packages
-#pip install -r PROJECT_SOURCE_PATH/lab2/requirements.txt
+pip install -r PROJECT_SOURCE_PATH/lab2/requirements.txt
 
 # Go to the source code directory
-#cd PROJECT_SOURCE_PATH/lab2
+cd PROJECT_SOURCE_PATH/lab2
 
-#echo "Done"
+echo "Done"
