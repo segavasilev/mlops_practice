@@ -13,4 +13,4 @@
 
 В результате запуска сборки Jenkins в консоли выводится информация о выполнении каждого этапа конвеера. После завершения сборки в консоли выводится информация о качестве модели. 
 
-![Screenshot](lab2/img/FinalMsg.png)
+![ScreenShot](https://github.com/segavasilev/mlops_practice/blob/master/lab2/img/FinalMsg.png)
