@@ -1,0 +1,3 @@
+app/catboost_info/
+run.sh
+.gitignore
